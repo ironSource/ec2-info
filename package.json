@@ -1,0 +1,32 @@
+{
+    "name": "ec2-info",
+    "version": "0.0.1",
+    "description": "Extract ec2 information from local http interface on an ec2 instance",
+    "license": "MIT",
+    "author": {
+        "name": "Yaniv Kessler",
+        "email": "yaniv@ironsrc.com"
+    },
+    "scripts": {
+        "test": "mocha test.js"
+    },
+    "dependencies": {
+        "async": "^2.6.0",
+        "commander": "^2.12.2",
+        "concat-stream": "^1.6.0",
+        "debug": "^3.1.0",
+        "is-ec2-machine": "^1.0.0"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "mocha": "~4.0.1"
+    },
+    "keywords": [
+        "aws",
+        "ec2"
+    ],
+    "engines": {
+        "node": ">=7.0.0",
+        "npm": ">=2.0.0"
+    }
+}
