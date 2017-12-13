@@ -23,7 +23,7 @@ let properties = ['meta-data/instance-id', 'meta-data/instance-type']
 // fetch these properties
 ec2Info(properties, (err, info) => {
     if (err) return console.error(err)
-    // prints: Map { 'instance-id' => 'foofoofoo', 'instance-type' => 'm4-large' }
+    // prints: Map { 'meta-data/instance-id' => 'foofoofoo', 'meta-data/instance-type' => 'm4-large' }
     console.log(info) 
 })
 
@@ -31,7 +31,7 @@ ec2Info(properties, (err, info) => {
 let options = { dataURL: 'http://localhost:8080/latest/' }
 ec2Info(properties, options, (err, info) => {
     if (err) return console.error(err)
-    // prints: Map { 'instance-id' => 'foofoofoo', 'instance-type' => 'm4-large' }
+    // prints: Map { 'meta-data/instance-id' => 'foofoofoo', 'meta-data/instance-type' => 'm4-large' }
     console.log(info) 
 })
 ```
