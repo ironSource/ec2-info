@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const ec2Info = require('./index')
 const program = require('commander')
 const version = require('./package.json').version
