@@ -1,8 +1,8 @@
-# ec-2-info
+# ec2-info
 
 **Extract ec2 metadata information from the local http interface on an ec2 instance**
 
-[![npm status](http://img.shields.io/npm/v/ec-2-info.svg?style=flat-square)](https://www.npmjs.org/package/ec-2-info) 
+[![npm status](http://img.shields.io/npm/v/ec2-info.svg?style=flat-square)](https://www.npmjs.org/package/ec2-info) 
 
 This module can be consumed programmatically or as a command line tool
 
@@ -15,7 +15,7 @@ Beware, though, when traversing the ec2 metadata information tree! There are som
 `npm i ec2-info`
 
 ```js
-const ec2Info = require('ec-2-info')
+const ec2Info = require('ec2-info')
 
 ec2Info((err, info) => {
     if (err) return console.error(err)
