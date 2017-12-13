@@ -18,21 +18,18 @@ Beware, though, when traversing the ec2 metadata information tree! There are som
 ```js
 const ec2Info = require('ec2-info')
 
-ec2Info((err, info) => {
-    if (err) return console.error(err)
-    // prints: Map { 'instance-id' => 'foofoofoo', 'public-ipv4' => '1.2.3.4' }
-    console.log(info) 
-})
+let properties = ['meta-data/instance-id', 'meta-data/instance-type']
 
-// custom properties
-ec2Info(['meta-data/instance-id', 'meta-data/instance-type'], (err, info) => {
+// fetch these properties
+ec2Info(properties, (err, info) => {
     if (err) return console.error(err)
     // prints: Map { 'instance-id' => 'foofoofoo', 'instance-type' => 'm4-large' }
     console.log(info) 
 })
 
 // custom data url
-ec2Info(['meta-data/instance-id', 'meta-data/instance-type'], { dataURL: 'http://localhost:8080/latest/' }, (err, info) => {
+let options = { dataURL: 'http://localhost:8080/latest/' }
+ec2Info(properties, options, (err, info) => {
     if (err) return console.error(err)
     // prints: Map { 'instance-id' => 'foofoofoo', 'instance-type' => 'm4-large' }
     console.log(info) 
