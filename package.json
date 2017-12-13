@@ -32,5 +32,6 @@
   "engines": {
     "node": ">=7.0.0",
     "npm": ">=2.0.0"
-  }
+  },
+  "engineStrict" : true
 }
