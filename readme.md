@@ -63,6 +63,9 @@ You can also change the default url `http://169.254.169.254/latest/` to somethin
 ### list some known keys
 `ec2-info index`
 
+## debug
+uses [debug](https://github.com/visionmedia/debug) with namespace `ec2-info`
+
 ## license
 
 [MIT](http://opensource.org/licenses/MIT) © ironSource ltd
