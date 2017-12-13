@@ -1,8 +1,10 @@
 # ec-2-info
 
-**Extract ec2 metadata information from local http interface on an ec2 instance**
+**Extract ec2 metadata information from the local http interface on an ec2 instance**
 
 [![npm status](http://img.shields.io/npm/v/ec-2-info.svg?style=flat-square)](https://www.npmjs.org/package/ec-2-info) 
+
+This module can be consumed programmatically or as a command line tool
 
 Click [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html#instancedata-data-categories) for complete reference about ec2 metadata information
 
@@ -44,7 +46,7 @@ If used on anything other than an ec2 instance as determined by [is-ec2-machine]
 ### fetch some values:
 `ec2-info fetch --help`
 
-`ec2-info fetch meta-data/public-ipv4 meta-data/instance-id`
+`ec2-info fetch meta-data/public-ipv4 meta-data/instance-id --format=json`
 
 ### list some known keys
 `ec2-info index`

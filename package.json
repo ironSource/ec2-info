@@ -1,7 +1,7 @@
 {
     "name": "ec2-info",
     "version": "0.0.1",
-    "description": "Extract ec2 information from local http interface on an ec2 instance",
+    "description": "Extract ec2 metadata information from the local http interface on an ec2 instance",
     "license": "MIT",
     "author": {
         "name": "Yaniv Kessler",
