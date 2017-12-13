@@ -18,14 +18,14 @@ describe('ec2-info', () => {
 
 	it('fetches properties', (done) => {
 		let properties = ['meta-data/ami-id', '/meta-data/instance-id', 'made-up']
-		ec2Info(properties, (err, info) => {
+		ec2Info(properties, testOptions, (err, info) => {
 			if (err) return done(err)
 			expect(info.size).to.equal(3)
 			expect(info.get('meta-data/ami-id')).to.equal('foo')
 			expect(info.get('/meta-data/instance-id')).to.equal('123')
 			expect(info.get('made-up')).to.equal('bar')
 			done()
-		}, testOptions)
+		})
 	})
 
 	it('on a machine that is not an ec2 machine, dont fail and dont fetch anything', () => {
@@ -55,13 +55,15 @@ describe('ec2-info', () => {
 describe.skip('integration test', () => {
 	it('fetches properties on a real ec2-machine', (done) => {
 		let properties = ['meta-data/services/partition', '/meta-data/services/domain']
-		ec2Info(properties, (err, info) => {
+		let options = { dataURL: 'http://localhost:8080/latest/' }
+
+		ec2Info(properties, options, (err, info) => {
 			if (err) return done(err)
 			expect(info.size).to.equal(2)
 			expect(info.get('meta-data/services/partition')).to.equal('aws')
 			expect(info.get('/meta-data/services/domain')).to.equal('amazonaws.com')
 			done()
-		}, { dataURL: 'http://localhost:8080/latest/' })
+		})
 	})
 })
 

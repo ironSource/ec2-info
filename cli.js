@@ -25,7 +25,7 @@ function fetch(keys, options) {
 		ec2InfoOptions = { dataURL: options.url }
 	}
 
-	ec2Info(keys, (err, info) => {
+	ec2Info(keys, ec2InfoOptions, (err, info) => {
 		if (err) {
 			return console.error(err)
 		}
@@ -43,7 +43,7 @@ function fetch(keys, options) {
 		}
 
 		throw new Error('invalid format')
-	}, ec2InfoOptions)
+	})
 }
 
 function printCSV(info) {

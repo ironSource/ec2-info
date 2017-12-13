@@ -11,18 +11,18 @@ const { resolve } = require('url')
  *	fetch the data
  *
  *	@param {array} properties - names of properties to fetch
- *	@param {function} callback - callback function for results, `(err, info) => { // info is an es6 map }`
  *	@param {object} options - tweaking options
  *	@param {string} [options.dataURL='http://169.254.169.254/latest/'] - change the url to fetch data from
  *	@param {boolean} [options.testIsEc2Machine=true] - disabled is-ec2-machine test
+ *	@param {function} callback - callback function for results, `(err, info) => { // info is an es6 map }`
  *
+ *	@public
  */
-module.exports = (properties, callback, options) => {
+module.exports = (properties, options, callback) => {
 
-	if (typeof(properties) === 'function') {
-		options = callback
-		callback = properties
-		properties = undefined
+	if (typeof(options) === 'function') {
+		callback = options
+		options = undefined
 	}
 
 	options = options || {}
