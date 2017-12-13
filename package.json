@@ -10,6 +10,10 @@
     "scripts": {
         "test": "mocha test.js"
     },
+    "bin": {
+        "ec2-info": "cli.js",
+        "ec2info": "cli.js"
+    },
     "dependencies": {
         "async": "^2.6.0",
         "commander": "^2.12.2",
