@@ -3,6 +3,7 @@
 **Extract ec2 metadata information from the local http interface on an ec2 instance**
 
 [![npm status](http://img.shields.io/npm/v/ec2-info.svg?style=flat-square)](https://www.npmjs.org/package/ec2-info) 
+[![Build Status](https://secure.travis-ci.org/ironSource/ec2-info.png?branch=master)](http://travis-ci.org/ironSource/ec2-info)
 
 This module can be consumed programmatically or as a command line tool
 
